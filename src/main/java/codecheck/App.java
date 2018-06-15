@@ -8,10 +8,19 @@ import java.net.URL;
 
 public class App {
 	public static void main(String[] args) {
+
+		String key = null;
+
 		for (int i = 0, l = args.length; i < l; i++) {
+			key += args[i];
+		}
+
+		key = key.replaceAll("+", "%2B");
+
+		key = key.replaceAll("'", "%27");
 
 			try {
-				URL urlObj = new URL("http://challenge-server.code-check.io/api/hash?q=" + args[i]);
+				URL urlObj = new URL("http://challenge-server.code-check.io/api/hash?q=" + key);
 		        HttpURLConnection http = (HttpURLConnection) urlObj.openConnection();
 		        http.setRequestMethod("GET");
 		        http.connect();
@@ -45,6 +54,6 @@ public class App {
 			} catch (Exception e1) {
                 e1.printStackTrace();
             }
-		}
+
 	}
 }
