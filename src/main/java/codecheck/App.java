@@ -12,7 +12,7 @@ public class App {
 		String key = null;
 
 		for (int i = 0, l = args.length; i < l; i++) {
-			key += args[i];
+			key = key + args[i];
 		}
 
 		key = key.replaceAll("+", "%2B");
