@@ -11,7 +11,7 @@ public class App {
 		for (int i = 0, l = args.length; i < l; i++) {
 
 			try {
-				URL urlObj = new URL("http://challenge-server.code-check.io?q=" + args[i]);
+				URL urlObj = new URL("http://challenge-server.code-check.io/api/hash?q=" + args[i]);
 		        HttpURLConnection http = (HttpURLConnection) urlObj.openConnection();
 		        http.setRequestMethod("GET");
 		        http.connect();
