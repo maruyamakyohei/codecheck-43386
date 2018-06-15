@@ -16,8 +16,6 @@ public class App {
 		        http.setRequestMethod("GET");
 		        http.connect();
 
-		        StringBuffer result = new StringBuffer();
-
 		         // HTTPレスポンスコード
 	            final int status = http.getResponseCode();
 	            if (status == HttpURLConnection.HTTP_OK) {
@@ -35,7 +33,8 @@ public class App {
 	                String line = null;
 	                // 1行ずつテキストを読み込む
 	                while((line = bufReader.readLine()) != null) {
-	                	System.out.println(line);
+	                	String[] hash = line.split("\"");
+	                	System.out.println(hash[7]);
 	                }
 	                bufReader.close();
 	                inReader.close();
