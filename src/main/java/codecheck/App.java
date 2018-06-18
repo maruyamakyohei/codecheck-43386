@@ -16,8 +16,8 @@ public class App {
         	param = param + args[i];
         }
 
-        param = param.replace("+", "%27");
-        param = param.replace("\'", "%2B");
+        //param = param.replace("+", "%27");
+        //param = param.replace("\'", "%2B");
 
         try {
             URL urlObj = new URL("http://challenge-server.code-check.io/api/hash?q=" + param);
