@@ -13,12 +13,12 @@ public class App {
 
         for (int i = 0, l = args.length; i < l; i++) {
         	if (i != 0) {
-            	param = param + args[i];
+            	param = param + "+" + args[i];
         	}
         }
 
-        param = param.replace("+", "%27");
-        param = param.replace("\'", "%2B");
+        param = param.replace("+", "%2B");
+        param = param.replace("\'", "%27");
 
         try {
             URL urlObj = new URL("http://challenge-server.code-check.io/api/hash?q=" + param);
