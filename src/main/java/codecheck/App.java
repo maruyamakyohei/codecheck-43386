@@ -9,16 +9,20 @@ import java.net.URL;
 public class App {
     public static void main(String[] args) {
 
-    	String param = args[0];
+    	String param = "";
 
         for (int i = 0, l = args.length; i < l; i++) {
-        	if (i != 0) {
-            	param = param + "+" + args[i];
+
+        	String tmp = args[i];
+            tmp = tmp.replace("+", "%2B");
+            tmp = tmp.replace("\'", "%27");
+
+        	if (i == 0) {
+            	param = tmp;
+        	} else {
+        		param = param + "+" + tmp;
         	}
         }
-
-        param = param.replace("+", "%2B");
-        param = param.replace("\'", "%27");
 
         try {
             URL urlObj = new URL("http://challenge-server.code-check.io/api/hash?q=" + param);
