@@ -16,6 +16,7 @@ public class App {
         	String tmp = args[i];
             tmp = tmp.replace("+", "%2B");
             tmp = tmp.replace("\'", "%27");
+            tmp = tmp.replace(" ", "+");
 
         	if (i == 0) {
             	param = tmp;
