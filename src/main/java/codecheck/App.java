@@ -13,6 +13,7 @@ public class App {
 
         for (int i = 0, l = args.length; i < l; i++) {
 
+        	// URLエンコード
         	String tmp = args[i];
             tmp = tmp.replace("+", "%2B");
             tmp = tmp.replace("\'", "%27");
